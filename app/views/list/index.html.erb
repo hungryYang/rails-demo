@@ -1,0 +1,17 @@
+<h1>List</h1>
+<%= form_tag('/list/search') do -%>
+  <%=text_field_tag 'condition'%>
+  <div><%= submit_tag 'search' %></div>
+<% end -%>
+<ul>
+  <%@list.each do |item|%>
+    <li>
+        <span>title is <%= item.title%>.</span>
+        <%= link_to 'read', {controller:'list', action:'read', id:item} %>
+        <%= link_to 'update', {controller:'list', action:'edit', id:item} %>
+        <%= link_to 'delete', {controller:'list', action:'delete', id:item} %>        
+    </li>
+  <%end%>
+</ul>
+
+<%= link_to 'add', {controller:'list',action:'add'}%>

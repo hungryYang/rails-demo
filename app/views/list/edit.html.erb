@@ -1,0 +1,9 @@
+<%= form_for @item ,:url=>{controller:'list',action:'update',id:@item} do |f|%>
+  <%= f.label :title, 'Title'%>
+  <%= f.text_field :title%>
+
+  <%= f.label :description,'Description'%>
+  <%= f.text_area :description%>
+
+  <%= f.submit:'update'%>
+<%end%>
